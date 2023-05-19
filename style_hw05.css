@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Titan One', cursive;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  text-align: center;
+  place-items: center;
+  background:  #F0F1F8;
+  /* 1. 중앙 정렬 및 배경 색상 설정하기 */
+}
+.container{
+  background: #ffffff;
+  padding: 60px 40px;
+  width: 490px;
+  border-radius: 7px;
+  box-shadow: 0 0 15px rgba(11, 10, 10, 0.8);
+  /* 2. box css 입히기
+  1) 박스는 흰색으로 설정 #ffffff
+  2) 박스 모서리 둥글게 하기
+  3) 드롭 섀도우
+  */
+}
+.container header{
+  font-size: 24px;
+  font-weight: 660;
+  /* 3. "Password Strength Indicator" css 설정하기 */
+}
+.container form{
+  margin: 20px 5px 10px 5px;
+  position: relative;
+}
+.container form .field{
+  height: 45px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+form .field input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  transition: all 0.3s;
+  border: 1.5px solid darkgray ;
+  padding-left: 14px;
+  border-radius: 7px;
+  font-size: 16px;
+  /* 4. input box의 여백, 테두리, 모서리, 폰트 설정하기 */
+}
+
+form .field input:focus{
+  border-color:#5364FF;
+  /*
+  5. input이 focus 되었을 때의 테두리 색상 설정하기
+  */
+}
+form .field .showBtn{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+}
+form .indicator{
+  height: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+  margin-top: 20px;
+}
+
+form .indicator span{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #B7B7B7 ;
+  border-radius: 7px;
+  margin-top: 20px;
+  /* 
+  5. span 조건 미충족 시의 css 설정하기
+  컬러, 모서리 
+  */
+}
+
+form .indicator span:nth-child(2){
+  margin: 0 3px;
+  margin-top: 20px;
+}
+form .indicator span.active:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.indicator span.weak:before{
+  background-color: #FF6489;
+}
+.indicator span.medium:before{
+  background-color:#F0C34F;
+}
+.indicator span.strong:before{
+  background-color:#5DD9B4;
+}
+/*
+6. weak, medium, strong 별로 박스 색상 설정하기
+*/
+
+form .text{
+  display: none;
+  font-size: 19px;
+  font-weight: 500;
+  margin-top: 20px;
+  /* 
+  7. 안내 문구 텍스트 설정하기
+  여백, 두께, 크기
+  */
+}
+
+form .text.weak{
+  color: #FF6489;
+}
+form .text.medium{
+  color:#F0C34F;
+}
+form .text.strong{
+  color:#5DD9B4;
+}
+/* 8. 텍스트 색상 설정하기 */
